@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IntershipExercises</string>
+    <string name="label_increment">Number of Clicks</string>
+    <string name="click">click</string>
 </resources>
