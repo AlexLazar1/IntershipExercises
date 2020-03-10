@@ -24,27 +24,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: Happy to be born");
         initViews();
-        int map_key_counter = savedInstanceState.getInt("myCounter");
         if( (savedInstanceState!= null) ){
-            increment_value = map_key_counter;
+            increment_value = savedInstanceState.getInt("myCounter");
+            incrementTv.setText(String.valueOf(increment_value));
         }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "onStart: I exist, but you can;t see me");
     }
 
     private void initViews(){
         incrementTv = findViewById(R.id.counter_value_tv);
         incrementBtn = findViewById(R.id.increment_button);
-        incrementTv.setText(increment_value + "");
+        incrementTv.setText(String.valueOf(increment_value));
         incrementBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 increment_value++;
-                incrementTv.setText(increment_value + "");
+                incrementTv.setText(String.valueOf(increment_value));
             }
         });
     }
@@ -55,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putInt("myCounter", increment_value);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: I exist, but you can;t see me");
+    }
 
 
     @Override

@@ -14,13 +14,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_increment"
+        android:paddingBottom="14dp"
         />
 
     <TextView
         android:id="@+id/counter_value_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="@string/counter_value"
+        android:paddingBottom="14dp"
         />
 
     <Button
